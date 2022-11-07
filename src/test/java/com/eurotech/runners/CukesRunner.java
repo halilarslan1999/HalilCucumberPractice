@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "com/eurotech/step_definitions"
+        glue = "com/eurotech/step_definitions",
+        dryRun = false,
+        tags = "@login"
 )
 public class CukesRunner {
 

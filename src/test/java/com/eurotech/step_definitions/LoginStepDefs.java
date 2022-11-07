@@ -3,6 +3,7 @@ package com.eurotech.step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class LoginStepDefs {
 
@@ -35,5 +36,12 @@ public class LoginStepDefs {
     public void theUserEntersDeveloperCredentials() {
 
         System.out.println("I enter developer username and password and click login button");
+
+    }
+
+
+    @When("The user enters SDET credentials")
+    public void theUserEntersSDETCredentials() {
+        System.out.println("I enter SDET username and password and click login button");
     }
 }
