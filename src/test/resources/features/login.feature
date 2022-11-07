@@ -1,7 +1,7 @@
 @login
 Feature: Eurotech Log in Test
 
-  @Teacher @db
+  @Teacher
   Scenario: Login as a teacher
     Given The user is on the login page
     When  The user enters teacher credentials
@@ -13,13 +13,13 @@ Feature: Eurotech Log in Test
     When The user enters student credentials
     Then The user should be able to login
 
-  @wip @db
+  @db
   Scenario: Login as developer
     Given The user is on the login page
     When The user enters developer credentials
     Then The user should be able to login
 
-  @sdet
+  @sdet @db
   Scenario: Login as SDET
     Given The user is on the login page
     When The user enters SDET credentials

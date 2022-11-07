@@ -21,9 +21,7 @@ public class Hooks {
     public void setUpDb(){
         System.out.println("\tConnecting DB");
 
-
     }
-
     @After("@db")
     public void closeDb(){
         System.out.println("\tDisconnecting DB");
