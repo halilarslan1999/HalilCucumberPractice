@@ -59,4 +59,11 @@ public class LoginStepDefs {
 
 
     }
+
+    @Then("The welcome message contains {string}")
+    public void theWelcomeMessageContains(String user) {
+        BrowserUtils.waitFor(1);
+        String actualMessage = dashboardPage.welcomeMessage.getText();
+        Assert.assertTrue(actualMessage.contains(user));
+    }
 }

@@ -39,7 +39,7 @@ public class DashboardPage extends BasePage{
           public WebElement companyName;
 
            public void navigateToMenu(String menuName){
-               Driver.get().findElement(By.xpath("//*[text()='"+menuName+"']")).click();
+               Driver.get().findElement(By.xpath("//a[text()='"+menuName+"']")).click();
 
            }
 
@@ -57,6 +57,10 @@ public class DashboardPage extends BasePage{
 
            public String getCompany(String companyName){
              return   Driver.get().findElement(By.xpath("//td[text()='"+companyName+"']")).getText();
+           }
+
+           public String  getHeader(String headerName){
+           return      Driver.get().findElement(By.xpath("//section[@class='container']/*[text()='"+headerName+"']")).getText();
            }
 
 

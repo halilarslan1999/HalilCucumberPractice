@@ -1,8 +1,12 @@
 package com.eurotech.step_definitions;
 
+import com.eurotech.pages.DashboardPage;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class NavigationMenuStepDefs {
+
+    DashboardPage dashboardPage = new DashboardPage();
 
     @Then("The user should be able to see welcome message")
     public void the_user_should_be_able_to_see_welcome_message() {
@@ -37,5 +41,7 @@ public class NavigationMenuStepDefs {
     public void the_user_able_to_see_dashboard_text() {
         System.out.println("I verified that Dashboard text is here ");
     }
+
+
 
 }
