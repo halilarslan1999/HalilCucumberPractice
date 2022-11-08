@@ -13,7 +13,7 @@ Feature: Navigation Menu
       Then The user should be able to see welcome message
       And The user navigates to All Posts menu
       Then The user able to see All Posts text
-  @wip
+
   Scenario: Navigating to My Account Menu
     Given The user is on the login page
     When The user enters teacher credentials

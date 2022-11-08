@@ -48,4 +48,15 @@ public class LoginStepDefs {
         loginPage.loginAsDeveloper();
 
     }
+
+    @When("The user logs in using {string} and {string}")
+    public void theUserLogsInUsingAnd(String username, String password) {
+
+        System.out.println("username "+username);
+        System.out.println("password "+password);
+
+        loginPage.login(username,password);
+
+
+    }
 }
