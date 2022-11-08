@@ -19,10 +19,5 @@ Feature: Eurotech Log in Test
     When The user enters developer credentials
     Then The user should be able to login
 
-  @sdet @db
-  Scenario: Login as SDET
-    Given The user is on the login page
-    When The user enters SDET credentials
-    Then The user should be able to login
 
 

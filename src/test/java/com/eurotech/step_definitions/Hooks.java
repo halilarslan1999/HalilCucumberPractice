@@ -1,5 +1,6 @@
 package com.eurotech.step_definitions;
 
+import com.eurotech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -14,7 +15,7 @@ public class Hooks {
 
     @After
     public void tearDown(){
-        System.out.println("\tThis is coming from After Method");
+        Driver.closeDriver();
     }
 
     @Before("@db")
