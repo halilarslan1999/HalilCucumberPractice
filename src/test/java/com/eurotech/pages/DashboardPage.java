@@ -14,7 +14,7 @@ public class DashboardPage extends BasePage{
            @FindBy(xpath = "//p[contains(text(),'Welcome')]")
            public WebElement welcomeMessage;
 
-           @FindBy(css = ".nav__menu-item")
+           @FindBy(css = "#navbar-menu-list2>li")
            public List<WebElement> menuList;
 
            @FindBy(xpath = "//a[text()='All Posts']")
