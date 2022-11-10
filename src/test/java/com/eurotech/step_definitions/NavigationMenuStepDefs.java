@@ -1,6 +1,7 @@
 package com.eurotech.step_definitions;
 
 import com.eurotech.pages.DashboardPage;
+import com.eurotech.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
@@ -43,5 +44,17 @@ public class NavigationMenuStepDefs {
     }
 
 
+    @Then("The user navigates to {string} menu")
+    public void the_user_navigates_to_menu(String menuName) {
+        dashboardPage.navigateToDashboardMenu(menuName);
 
+    }
+
+    @Then("The user should be able to see  header as {string}")
+    public void theUserShouldBeAbleToSeeHeaderAs(String headerName) {
+        BrowserUtils.waitFor(1);
+      String actualHeader=  dashboardPage.getHeaderText(headerName);
+      Assert.assertEquals("verify that header name is display",headerName,actualHeader);
+
+    }
 }

@@ -51,19 +51,16 @@ public class LoginStepDefs {
 
     @When("The user logs in using {string} and {string}")
     public void theUserLogsInUsingAnd(String username, String password) {
-
-        System.out.println("username "+username);
-        System.out.println("password "+password);
-
+//        System.out.println("username "+username);
+//        System.out.println("password "+password);
         loginPage.login(username,password);
-
-
     }
 
     @Then("The welcome message contains {string}")
     public void theWelcomeMessageContains(String user) {
         BrowserUtils.waitFor(1);
         String actualMessage = dashboardPage.welcomeMessage.getText();
+        System.out.println("actualMessage = " + actualMessage);
         Assert.assertTrue(actualMessage.contains(user));
     }
 }
