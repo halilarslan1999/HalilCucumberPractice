@@ -50,6 +50,7 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>Alphabetical</runOrder>
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
                     <includes>
                         <include>**/*CukesRunner.java</include>
                         <include>**/*FailedTestRunner.java</include>

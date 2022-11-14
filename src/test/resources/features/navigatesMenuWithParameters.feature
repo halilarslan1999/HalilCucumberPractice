@@ -3,12 +3,14 @@ Feature: Navigate to Menu Parameters
   Background:
     Given The user is on the login page
 
+    @rerun
   Scenario: User navigates to Developers Menu
 
     When The user logs in using "umut@gmail.com" and "Test12345!"
     Then The welcome message contains "Teacher"
     And The user navigates to "Developers" menu
     Then The user should be able to see  header as "Filter Profiles by Skill or by Location"
+
 
   Scenario: User navigates to All Posts Menu
 
@@ -34,7 +36,7 @@ Feature: Navigate to Menu Parameters
     Examples:
       | userType           | password   | name      | menu       | header                                  |
       | eurotech@gmail.com | Test12345! | Teacher   | Developers | Filter Profiles by Skill or by Location |
-      | umut@gmail.com     | Test12345! | umut      | All Posts  | Posts                                   |
+      | umut@gmail.com     | Test12345! | Admin      | All Posts  | Posts                                   |
       | berlin@gmail.com   | berlin     | Babamyrat | My Account | Dashboard                               |
 
 
