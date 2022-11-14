@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginStepDefs {
@@ -63,4 +64,16 @@ public class LoginStepDefs {
         System.out.println("actualMessage = " + actualMessage);
         Assert.assertTrue(actualMessage.contains(user));
     }
+
+    @Then("The warning message contains {string}")
+    public void theWarningMessageContains(String expectedMessage) {
+        BrowserUtils.waitFor(2);
+        loginPage.getDisapperingWarningMessage(expectedMessage);
+
+//            String actualMessage = Driver.get().findElement(By.id("loginpage-input-email")).getAttribute("validationMessage");
+//            Assert.assertEquals(expectedMessage,actualMessage);
+//            System.out.println(actualMessage);
+        }
+
+
 }

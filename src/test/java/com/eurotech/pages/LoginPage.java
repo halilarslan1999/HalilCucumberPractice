@@ -1,6 +1,8 @@
 package com.eurotech.pages;
 
 import com.eurotech.utilities.ConfigurationReader;
+import com.eurotech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +27,13 @@ public class LoginPage extends BasePage{
 
     @FindBy(id = "dashboard-h1")
     public WebElement dashboardText;
+
+    @FindBy(xpath = "//*[text()='Please include a valid email!']")
+    public WebElement warningMessageInclude;
+
+
+    @FindBy(xpath = "//*[contains(text(),'valid')]")
+    public WebElement warningMessageValid;
 
 
     @FindBy(css = ".menu-list")
@@ -76,6 +85,21 @@ public class LoginPage extends BasePage{
         passwordInput.sendKeys(ConfigurationReader.get("passwordDeveloper"));
         understandBtn.click();
         loginBtn.click();
+
+
+    }
+
+    public String  getDisapperingWarningMessage(String message){
+        String actualMessage =null;
+
+        if(message.contains("@")){
+            actualMessage=usernameInput.getAttribute("validationMessage");
+        }else if(message.contains("valid")) {
+            actualMessage=warningMessageValid.getText();
+        }
+        return actualMessage;
+
+
 
 
     }
