@@ -16,7 +16,7 @@ Feature: Navigate to Menu Parameters
   Scenario: User navigates to All Posts Menu
 
     When The user logs in using "eurotech@gmail.com" and "Test12345!"
-    Then The welcome message contains "umut"
+    Then The welcome message contains "Teacher"
     And The user navigates to "All Posts" menu
     Then The user should be able to see  header as "Posts"
 
