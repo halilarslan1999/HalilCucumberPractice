@@ -1,4 +1,4 @@
-
+@smoke
 Feature: Log in as different user
 
 @wip
