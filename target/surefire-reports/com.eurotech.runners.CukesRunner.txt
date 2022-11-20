@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.eurotech.runners.CukesRunner
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 66.8 s <<< FAILURE! - in com.eurotech.runners.CukesRunner
+Navigate to Menu Parameters.User navigates to All Posts Menu  Time elapsed: 4.143 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.eurotech.step_definitions.LoginStepDefs.theWelcomeMessageContains(LoginStepDefs.java:65)
+	at ✽.The welcome message contains "umut"(file:///C:/Users/User/IdeaProjects/Batch4CucumberSelenium/src/test/resources/features/navigatesMenuWithParameters.feature:19)
+
+Navigate to Menu Parameters.User navigates to All Posts Menu  Time elapsed: 4.477 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.eurotech.step_definitions.LoginStepDefs.theWelcomeMessageContains(LoginStepDefs.java:65)
+	at ✽.The welcome message contains "umut"(file:///C:/Users/User/IdeaProjects/Batch4CucumberSelenium/src/test/resources/features/navigatesMenuWithParameters.feature:19)
+
+Navigate to Menu Parameters.User navigates to All Posts Menu  Time elapsed: 4.421 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.eurotech.step_definitions.LoginStepDefs.theWelcomeMessageContains(LoginStepDefs.java:65)
+	at ✽.The welcome message contains "umut"(file:///C:/Users/User/IdeaProjects/Batch4CucumberSelenium/src/test/resources/features/navigatesMenuWithParameters.feature:19)
+
