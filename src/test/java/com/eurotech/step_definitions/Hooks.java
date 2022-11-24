@@ -10,10 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
-
-
-
-    @Before
+   @Before
     public void setup(){
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

@@ -5,12 +5,16 @@ import com.eurotech.pages.LoginPage;
 import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
+import com.eurotech.utilities.ExcelUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
+import java.util.Map;
 
 public class LoginStepDefs {
 
@@ -75,5 +79,33 @@ public class LoginStepDefs {
 //            System.out.println(actualMessage);
         }
 
+    @When("The user enters {string} and row number {int}")
+    public void the_user_enters_and_row_number(String sheetName, Integer rowNumber) {
 
+        ExcelUtil excelUtil=new ExcelUtil("src/test/resources/EurotechTestLast.xls",sheetName);
+        List<Map<String, String>> dataList= excelUtil.getDataList();
+
+        loginPage.login(dataList.get(rowNumber).get("Username"), dataList.get(rowNumber).get("Password"));
+    }
+
+    @Then("The welcome message contains in excel {int}")
+    public void the_welcome_message_contains_in_excel(Integer rowNumber) {
+        ExcelUtil excelUtil=new ExcelUtil("src/test/resources/EurotechTestLast.xls","Test Data");
+        List<Map<String, String>> dataList= excelUtil.getDataList();
+
+        String actualeMessage=dashboardPage.welcomeMessage.getText();
+
+        Assert.assertTrue(actualeMessage.contains(dataList.get(rowNumber).get("Name")));
+
+    }
+
+    @Then("The user verifies the company name {int}")
+    public void theUserVerifiesTheCompanyNameRowNumberForCompany(Integer rowNumberForCompany) {
+        ExcelUtil excelUtil=new ExcelUtil("src/test/resources/EurotechTestLast.xls","Test Data");
+        List<Map<String, String>> dataList= excelUtil.getDataList();
+
+        String actualCompanyName= dashboardPage.getCompanyName((dataList.get(rowNumberForCompany)).get("Company"));
+
+        Assert.assertEquals(actualCompanyName, dataList.get(rowNumberForCompany).get("Company"));
+    }
 }

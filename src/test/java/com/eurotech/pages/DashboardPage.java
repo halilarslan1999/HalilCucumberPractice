@@ -4,12 +4,9 @@ import com.eurotech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class DashboardPage extends BasePage{
-
-
 
            @FindBy(xpath = "//p[contains(text(),'Welcome')]")
            public WebElement welcomeMessage;
@@ -38,8 +35,6 @@ public class DashboardPage extends BasePage{
           @FindBy(xpath = "//td[text()='Apple']")
           public WebElement companyName;
 
-
-
            public void navigateToSubMenu(String subMenu){
                Driver.get().findElement(By.xpath("//span[text()='"+subMenu+"']")).click();
            }
@@ -60,6 +55,8 @@ public class DashboardPage extends BasePage{
            return Driver.get().findElement(By.xpath("//section[@class='container']/*[text()='"+headerName+"']")).getText();
           }
 
-
+          public String getCompanyName(String companyName){
+               return Driver.get().findElement(By.xpath("//td[normalize-space()='"+companyName+"']")).getText();
+          }
 
 }
